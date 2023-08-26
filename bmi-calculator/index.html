@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          color: white;
+        }
+        body {
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: black;
+        }
+        .container {
+          /* width:49% ; */
+          
+          border: 1px solid black;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 3% 3%;
+          /* border: 2px solid white; */
+          box-shadow: 0 0 10px 5px rgb(245, 244, 244,0.3);
+        }
+       
+        .container,div{
+          margin: 15px 0;
+        }
+        h1 {
+          text-align: center;
+        }
+        .color{
+          color: #ff0066;
+        }
+        input {
+          width: 200px;
+          height: 30px;
+          background-color: transparent;
+          border-top: 1px solid #ff0066;
+  
+          border-radius: 20px;
+          transition: 0.5s;
+          padding-left: 20px;
+        }
+        .input2 {
+          display: inline;
+        }
+        input:hover {
+          transform: scaleX(1.1);
+        }
+        .main-text{
+          display: block;
+          margin: 10px 0;
+        }
+        label {
+          margin-right: 5px;
+        }
+        .margin-left {
+          margin-left: 20px;
+        }
+  
+        .flex {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        #ans{
+          width: 40%;
+          border-bottom: 1px solid #ff0066;
+          border-left: 1px solid #ff0066;
+          border-right: 1px solid #ff0066;
+          border-top: 1px solid white;
+  
+          border-radius: 20px;
+          text-align: center;
+          padding: 7px 0;
+        }
+        
+        button {
+          width: 20%;
+          height: 30px;
+          color: white;
+          background-color: black;
+  
+          border-bottom: 1px solid white;
+          border-left: 1px solid #ff0066;
+          border-right: 1px solid #ff0066;
+          border-top: 1px solid white;
+          border-radius: 20px;
+          transition: 0.5s;
+        }
+  
+        button:hover {
+          background-color: #ff0066;
+          border: none;
+        }
+        #ans{
+          margin-right: 10px;
+        }
+        #range{
+          margin-left:10px ;
+        }
+        .img-of-person{
+            width: 200px;
+            /* height: 300px; */
+            
+            
+        }
+        .btn1{
+          margin-right: 20px;
+        }
+        .btn2{
+          margin-left:20px ;
+        }
+        .showtherange{
+            display: flex;
+      flex-direction: column;
+      align-items: center;
+        }
+        /* .position-relative{
+            position: relative;
+        } */
+      </style>
+    
+  </head>
+  <body>
+    <div class="container">
+      <h1><span class="color">B</span>MI <span class="color">C</span>alculator</h1>
+
+      <div>
+        <span class="main-text">Weight:</span>
+        <label for="kg">KG</label> <input type="text" id="weight" />
+      </div>
+
+      <div>
+        <span class="main-text">Height:</span>
+        <div class="input2">
+          <label for="feet">Feet</label> <input type="text" id="feet" />
+        </div>
+        <div class="input2 margin-left">
+          <label for="inches">Inches</label> <input type="text" id="inches" />
+        </div>
+      </div>
+
+      <div class="flex position-relative">
+        <p id="ans">Answer:</p>
+
+       
+      </div>
+
+      <div class="flex">
+        <button type="button" onclick="bmical()" class="btn1">calculate</button>
+        <button type="button" onclick="bmireset()" class="btn2">reset</button>
+      </div>
+      <div class="showtherange">
+        <p id="range"></p>
+      <img src="" alt="" id="person" class="img-of-person">
+      </div>
+    </div>
+    <script>
+       
+  
+        function bmical() {
+            const weight = document.getElementById("weight");
+        const weightnum = parseInt(weight.value);
+  
+        const feet = document.getElementById("feet");
+        const feetnum = parseInt(feet.value);
+  
+        const inches = document.getElementById("inches");
+        const inchesnum = parseInt(inches.value);
+  
+        const ans = document.getElementById("ans");
+        const range = document.getElementById("range");
+        const person=document.getElementById("person")
+        
+          const heightInmeter = (feetnum + inchesnum / 12) * 0.304;
+          let bmivalue = weightnum / (heightInmeter * heightInmeter);
+          bmivalue = bmivalue.toFixed(2);
+          ans.innerText = ` ${bmivalue} kg/height2`;
+          
+  
+          if (bmivalue < 18.5) {
+            person.src="slime-person.png"
+            range.innerText = "you are in underwight range";
+          } else if (bmivalue >= 18.5 && bmivalue > 25) {
+            person.src="fit-person.png"
+            range.innerText = "you are in normal range";
+          } else if (bmivalue >= 25 && bmivalue < 30) {
+            person.src="fat-person.png"
+            range.innerText = "you are in overwight range";
+          }   else {
+            range.innerText = "you  are in obese";
+          }
+        }
+  
+        function bmireset() {
+          weight.value = "";
+          feet.value = "";
+          inches.value = "";
+          ans.innerText = "Answer:";
+        }
+      </script>
+ 
+  </body>
+</html>
