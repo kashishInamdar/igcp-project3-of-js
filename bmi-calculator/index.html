@@ -10,6 +10,7 @@
           padding: 0;
           box-sizing: border-box;
           color: white;
+          font-size: 20px;
         }
         body {
           width: 100vw;
@@ -17,18 +18,19 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: black;
+          background-color: #0a0a0a;;
         }
         .container {
           /* width:49% ; */
           
-          border: 1px solid black;
+         
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           padding: 3% 3%;
           /* border: 2px solid white; */
-          box-shadow: 0 0 10px 5px rgb(245, 244, 244,0.3);
+          box-shadow: 0px 0px 10px 3px white;
+          background-color: #0a0a0a;
         }
        
         .container,div{
@@ -36,16 +38,18 @@
         }
         h1 {
           text-align: center;
+          font-size: 50px;
         }
         .color{
           color: #ff0066;
+          font-size: 50px;
         }
         input {
-          width: 200px;
-          height: 30px;
+          width: 250px;
+          height: 40px;
           background-color: transparent;
           border-top: 1px solid #ff0066;
-  
+          font-size: 20px;
           border-radius: 20px;
           transition: 0.5s;
           padding-left: 20px;
@@ -53,15 +57,17 @@
         .input2 {
           display: inline;
         }
-        input:hover {
+        /* input:hover {
           transform: scaleX(1.1);
-        }
+        } */
         .main-text{
           display: block;
           margin: 10px 0;
+          font-size: 25px;
         }
         label {
           margin-right: 5px;
+          font-size: 25px;
         }
         .margin-left {
           margin-left: 20px;
@@ -82,14 +88,15 @@
           border-radius: 20px;
           text-align: center;
           padding: 7px 0;
+          font-size: 20px;
         }
         
         button {
-          width: 20%;
-          height: 30px;
+          width: 170px;
+          height: 40px;
           color: white;
-          background-color: black;
-  
+          background-color:  #0a0a0a;;
+  font-size: 20px;
           border-bottom: 1px solid white;
           border-left: 1px solid #ff0066;
           border-right: 1px solid #ff0066;
@@ -104,13 +111,19 @@
         }
         #ans{
           margin-right: 10px;
+          font-size: 20px;
         }
         #range{
           margin-left:10px ;
+          font-size: 50px;
+          color:#ff0066;
         }
         .img-of-person{
             width: 200px;
             /* height: 300px; */
+            filter: drop-shadow(0 0 10px #ff0066 );
+            margin-top: 20px;
+          
             
             
         }
@@ -191,10 +204,10 @@
           if (bmivalue < 18.5) {
             person.src="slime-person.png"
             range.innerText = "you are in underwight range";
-          } else if (bmivalue >= 18.5 && bmivalue > 25) {
+          } else if (bmivalue >= 18.5 && bmivalue < 25) {
             person.src="fit-person.png"
             range.innerText = "you are in normal range";
-          } else if (bmivalue >= 25 && bmivalue < 30) {
+          } else if (bmivalue >= 25 && bmivalue <= 30) {
             person.src="fat-person.png"
             range.innerText = "you are in overwight range";
           }   else {
