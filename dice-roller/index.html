@@ -12,13 +12,13 @@
       .container{
         width: 100%;
         height: 100vh;
-        background-color: black;
+        background-color:  #0a0a0a ;
 
       }
       .heading{
         font-size: 60px;
         font-weight: bold;
-        color: white;
+        color: #ff0066;
         text-align: center;
         
       }
@@ -28,6 +28,11 @@
         height: 90%;
       
         display: flex;
+      }
+      .subheading{
+        font-size: 50px;
+        color: white;
+        margin-bottom: 30px;
       }
       .col-5 {
         width: 40%;
@@ -59,15 +64,34 @@
         justify-content: center;
         align-items: center;
         margin-top: 20px;
+        background-color:  #0a0a0a;
       }
       .img-player{
         width: 100px;
       }
       .playbutton {
-        width: 200px;
-        height: 40px;
+        /* width: 200px;
+        height: 40px; */
         margin-top: 20px;
-      }
+        
+          width: 170px;
+          height: 40px;
+          color: white;
+         background-color: #0a0a0a;
+  font-size: 20px;
+          border-bottom: 1px solid white;
+          border-left: 1px solid #ff0066;
+          border-right: 1px solid #ff0066;
+          border-top: 1px solid white;
+          border-radius: 20px;
+          transition: 0.5s;
+        }
+  
+        button:hover { 
+          background-color: #ff0066;
+          border:none;}
+         
+      
       .rotatedice {
         animation-name: rotethedice;
         animation-duration: 0.5s;
@@ -92,23 +116,25 @@
       <div class="heading">Roll Dice</div>
      <div class="row">
       <div class="col-5">
+        <div class="subheading">Player A</div>
         <img src="./img/dice.png" alt="" class="dice" id="dice1" />
         <div class="playturn">
         <img src="./img/player1.png" alt="" class="img-player">
         <button type="button" onclick="turnofplayer(1)" class="playbutton">
-          Player one
+          play Your turn
         </button>
         </div>
       </div>
-      <div class="col-2"><button type="button" onclick="turnofbothplayer(1,2)" class="playbutton playboth"> rollbothdice
+      <div class="col-2"><button type="button" onclick="turnofbothplayer(1,2)" class="playbutton playboth"> Play Both
     </button></div>
        
       <div class="col-5">
+        <div class="subheading">Player A</div>
         <img src="./img/dice.png" alt="" class="dice" id="dice2" />
         
            <div class="playturn"> <img src="./img/player2.png" alt="" class="img-player">
             <button type="button" onclick="turnofplayer(2)" class="playbutton">
-              Player two
+              play Your turn
             </button>
           </div>
      
