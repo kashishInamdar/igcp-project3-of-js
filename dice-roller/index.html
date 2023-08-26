@@ -13,47 +13,119 @@
         width: 100%;
         height: 100vh;
         background-color: black;
-        display: flex;
-      
+
       }
-      .col-6{
-        width: 50%;
-        border: 1px solid white;
+      .heading{
+        font-size: 60px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        
+      }
+     
+      .row {
+        width: 100%;
+        height: 90%;
+      
+        display: flex;
+      }
+      .col-5 {
+        width: 40%;
+      
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
       }
-      .dice{
-        width:300px;
+      .col-2{
+        width: 20%;
+      
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
       }
-      .playbutton{
+      .playboth{
+        margin-bottom: 40px;
+      }
+      .dice {
+        width: 300px;
+        filter: drop-shadow(0px 0px 30px red);
+      }
+      .playturn{
+        display:flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .img-player{
+        width: 100px;
+      }
+      .playbutton {
         width: 200px;
         height: 40px;
         margin-top: 20px;
+      }
+      .rotatedice {
+        animation-name: rotethedice;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      @keyframes rotethedice {
+        0% {
+          transform: rotate(0deg);
+        }
+        0% {
+          transform: rotate(180deg);
+        }
+        0% {
+          transform: rotate(360deg);
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="col-6">
-        <img src="./img/dice.png" alt="" class="dice"  id="dice1"/>
-        <button type="button" onclick="turnofplayer(1)" class="playbutton">Player one</button>
+      <div class="heading">Roll Dice</div>
+     <div class="row">
+      <div class="col-5">
+        <img src="./img/dice.png" alt="" class="dice" id="dice1" />
+        <div class="playturn">
+        <img src="./img/player1.png" alt="" class="img-player">
+        <button type="button" onclick="turnofplayer(1)" class="playbutton">
+          Player one
+        </button>
+        </div>
       </div>
-      <button type="button" onclick="turnofbothplayer(1,2)" class="playbutton">rollbothdice</button>
-      <div class="col-6">
+      <div class="col-2"><button type="button" onclick="turnofbothplayer(1,2)" class="playbutton playboth"> rollbothdice
+    </button></div>
+       
+      <div class="col-5">
         <img src="./img/dice.png" alt="" class="dice" id="dice2" />
-        <button type="button" onclick="turnofplayer(2)" class="playbutton">Player two</button>
-      </div>
-      
+        
+           <div class="playturn"> <img src="./img/player2.png" alt="" class="img-player">
+            <button type="button" onclick="turnofplayer(2)" class="playbutton">
+              Player two
+            </button>
+          </div>
+     
     </div>
+     </div>
     <script>
        function turnofplayer(index){
         const dice=document.getElementById(`dice${index}`)
+        
         const rollthedice=Math.floor(Math.random()*(7-1)+1)
-       
-      
-        switch (rollthedice)
+        dice.classList.add("rotatedice")
+        setTimeout(function addanimation(){
+            dice.classList.remove("rotatedice")
+
+        },700)
+        setTimeout(function showingthenum(){
+            switch (rollthedice)
           {
               case 1:
                   dice.src="./img/dice1.png"
@@ -73,6 +145,11 @@
               case 6:
                   dice.src="./img/dice6.png"
                  }
+
+        },700)
+
+
+
       }
       function turnofbothplayer(index1,index2){
         const dice1=document.getElementById(`dice${index1}`)
@@ -80,7 +157,19 @@
         const rollthedice1=Math.floor(Math.random()*(7-1)+1)
         const rollthedice2=Math.floor(Math.random()*(7-1)+1)
 
-        switch (rollthedice1)
+        dice1.classList.add("rotatedice")
+        setTimeout(function addanimation(){
+            dice1.classList.remove("rotatedice")
+
+        },700)
+        dice2.classList.add("rotatedice")
+        setTimeout(function addanimation(){
+            dice2.classList.remove("rotatedice")
+
+        },700)
+
+        setTimeout(function showingthenum(){
+            switch (rollthedice1)
           {
               case 1:
                   dice1.src="./img/dice1.png"
@@ -101,9 +190,10 @@
                   dice1.src="./img/dice6.png"
                  }
 
+        },700)
 
-
-                 switch (rollthedice2)
+        setTimeout(function showingthenum(){
+            switch (rollthedice2)
           {
               case 1:
                   dice2.src="./img/dice1.png"
@@ -122,14 +212,13 @@
                   break;
               case 6:
                   dice2.src="./img/dice6.png"
-                 }
+          }
+                 },700)
+        }
 
-      } 
 
 
-
-       
-   
+      
     </script>
   </body>
 </html>
