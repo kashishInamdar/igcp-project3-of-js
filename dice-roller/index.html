@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container{
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        display: flex;
+      
+      }
+      .col-6{
+        width: 50%;
+        border: 1px solid white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .dice{
+        width:300px;
+      }
+      .playbutton{
+        width: 200px;
+        height: 40px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-6">
+        <img src="./img/dice.png" alt="" class="dice"  id="dice1"/>
+        <button type="button" onclick="turnofplayer(1)" class="playbutton">Player one</button>
+      </div>
+      <button type="button" onclick="turnofbothplayer(1,2)" class="playbutton">rollbothdice</button>
+      <div class="col-6">
+        <img src="./img/dice.png" alt="" class="dice" id="dice2" />
+        <button type="button" onclick="turnofplayer(2)" class="playbutton">Player two</button>
+      </div>
+      
+    </div>
+    <script>
+       function turnofplayer(index){
+        const dice=document.getElementById(`dice${index}`)
+        const rollthedice=Math.floor(Math.random()*(7-1)+1)
+       
+      
+        switch (rollthedice)
+          {
+              case 1:
+                  dice.src="./img/dice1.png"
+                  break;
+              case 2:
+                  dice.src="./img/dice2.png"
+                  break;
+              case 3:
+                  dice.src="./img/dice3.png"
+                  break;
+              case 4:
+                  dice.src="./img/dice4.png"
+                  break;
+              case 5:
+                  dice.src="./img/dice5.png"
+                  break;
+              case 6:
+                  dice.src="./img/dice6.png"
+                 }
+      }
+      function turnofbothplayer(index1,index2){
+        const dice1=document.getElementById(`dice${index1}`)
+        const dice2=document.getElementById(`dice${index2}`)
+        const rollthedice1=Math.floor(Math.random()*(7-1)+1)
+        const rollthedice2=Math.floor(Math.random()*(7-1)+1)
+
+        switch (rollthedice1)
+          {
+              case 1:
+                  dice1.src="./img/dice1.png"
+                  break;
+              case 2:
+                  dice1.src="./img/dice2.png"
+                  break;
+              case 3:
+                  dice1.src="./img/dice3.png"
+                  break;
+              case 4:
+                  dice1.src="./img/dice4.png"
+                  break;
+              case 5:
+                  dice1.src="./img/dice5.png"
+                  break;
+              case 6:
+                  dice1.src="./img/dice6.png"
+                 }
+
+
+
+                 switch (rollthedice2)
+          {
+              case 1:
+                  dice2.src="./img/dice1.png"
+                  break;
+              case 2:
+                  dice2.src="./img/dice2.png"
+                  break;
+              case 3:
+                  dice2.src="./img/dice3.png"
+                  break;
+              case 4:
+                  dice2.src="./img/dice4.png"
+                  break;
+              case 5:
+                  dice2.src="./img/dice5.png"
+                  break;
+              case 6:
+                  dice2.src="./img/dice6.png"
+                 }
+
+      } 
+
+
+
+       
+   
+    </script>
+  </body>
+</html>
