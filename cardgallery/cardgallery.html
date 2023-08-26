@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card gallery</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+           
+        }
+        body{
+            background-color: rgb(164, 152, 152);
+        }
+        .box{
+            height: 500px;
+            width: 800px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;
+            background-color: bisque;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        }
+        .btns{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(190, 203, 209);
+            width: 780px;
+            padding: 10px;
+            border-radius: 0px;
+            
+        }
+        .btn{
+            height: 40px;
+            width: 100px;
+            font-size: 15px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            
+        }
+        .cardimg{
+            height: 500px;
+            width: 800px;
+        }
+        .heading{
+            text-align: center;
+            color: aliceblue;
+            margin: 10px;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .fa-car{
+            color: #498fe6;
+        }
+
+    </style>
+   
+</head>
+<body>
+    <div>
+             
+        <h1 class="heading"> 2015 BMW I8 Roadster </h1>
+
+        <div class="box">
+            <img src="./general.jpg" class="cardimg" id="carimg">
+
+        </div>
+        <div class="btns">
+            <button class="btn" onclick="sideview()"> <i class="fa fa-car" aria-hidden="true"></i> Side View</button>
+            <button class="btn" onclick="innerview()"> <i class="fa fa-car" aria-hidden="true"></i> Inner View</button>
+            <button class="btn" onclick="Front()"> <i class="fa fa-car" aria-hidden="true"></i>  Back View</button>
+            <button class="btn" onclick="back()"> <i class="fa fa-car" aria-hidden="true"></i>  front View</button>
+
+        </div>
+       <br><br><br><br><br>
+
+       <script>
+
+        const carimg =document.getElementById("carimg")
+            function sideview(){
+                carimg.src="sideimg.jpg"
+            }
+            function innerview(){
+                carimg.src="innerview.jpg"
+            }
+            function Front(){
+                carimg.src="backview.jpg"
+            }
+            function back(){
+                carimg.src="general.jpg"
+            }
+
+
+
+       </script>
+       
+    </div>
+    <script src="https://kit.fontawesome.com/f8cbdcd7dc.js" crossorigin="anonymous"></script>
+</body>
+</html>
