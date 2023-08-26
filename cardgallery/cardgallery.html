@@ -11,7 +11,7 @@
            
         }
         body{
-            background-color: rgb(164, 152, 152);
+            background-color:#0a0a0a;
         }
         .box{
             height: 500px;
@@ -19,9 +19,9 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            border: 1px solid black;
+            border: 2px wheat double; 
             background-color: bisque;
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            box-shadow: 0px 0px 10px 3px white; 
 
         }
         .btns{
@@ -31,12 +31,14 @@
             margin-left: auto;
             margin-right: auto;
             background-color: rgb(190, 203, 209);
+            border: 2px wheat double; 
+            box-shadow: 0px 0px 15px 5px white; 
             width: 780px;
             padding: 10px;
             border-radius: 0px;
             
         }
-        .btn{
+        /* .btn{
             height: 40px;
             width: 100px;
             font-size: 15px;
@@ -44,20 +46,46 @@
             border: none;
             cursor: pointer;
             
-        }
+        } */
         .cardimg{
             height: 500px;
             width: 800px;
         }
         .heading{
             text-align: center;
-            color: aliceblue;
+            color: rgb(226, 41, 41);
             margin: 10px;
             font-family:Arial, Helvetica, sans-serif;
         }
         .fa-car{
             color: #498fe6;
         }
+        a{
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            color: #ffff;
+            margin-top: 20px;
+            
+        }
+        button {
+          width: 170px;
+          height: 40px;
+          color: white;
+          background-color:  #0a0a0a;;
+          font-size: 20px;
+          border-bottom: 1px solid white;
+          border-left: 1px solid #ff0066;
+          border-right: 1px solid #ff0066;
+          border-top: 1px solid white;
+          border-radius: 20px;
+          transition: 0.5s;
+        }
+  
+        button:hover {
+          background-color: #ff0066;
+          border: none;
+        }
 
     </style>
    
@@ -72,12 +100,13 @@
 
         </div>
         <div class="btns">
-            <button class="btn" onclick="sideview()"> <i class="fa fa-car" aria-hidden="true"></i> Side View</button>
+            <button class="button" onclick="sideview()"> <i class="fa fa-car" aria-hidden="true"></i> Side View</button>
             <button class="btn" onclick="innerview()"> <i class="fa fa-car" aria-hidden="true"></i> Inner View</button>
             <button class="btn" onclick="Front()"> <i class="fa fa-car" aria-hidden="true"></i>  Back View</button>
             <button class="btn" onclick="back()"> <i class="fa fa-car" aria-hidden="true"></i>  front View</button>
 
         </div>
+        <a href="./../index.html"> HOME</a>
        <br><br><br><br><br>
 
        <script>
@@ -95,8 +124,6 @@
             function back(){
                 carimg.src="general.jpg"
             }
-
-
 
        </script>
        
