@@ -11,34 +11,35 @@
 <body>
     <div class="container">
         <div class="row box-border">
-            <div class="col-3">
+            <div class="col-3 player1-box">
                 <div class="quantity-btn-container">
                     <p class="player">Player 1</p>
                     <span id="quantity1" class="score">0</span>
                     <div class="d-flex justify-content-between incre-dicre-box">
-                    <button type="button" class="incre-dicre-btn" onclick="decrement(1)">
-                        -
-                    </button>
+                        <button type="button" class="incre-dicre-btn bg-red" onclick="decrement(1)">
+                            -
+                        </button>
 
-                    <button type="button" class="incre-dicre-btn " onclick="increment(1)">
-                        +
-                    </button>
+                        <button type="button" class="incre-dicre-btn bg-green" onclick="increment(1)">
+                            +
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="col-6  reset-box">
-                <button type="reset" class="btn btn-outline-primary reset-btn "> Reset </button>
+                <h1 class="main-heading"> Play Foot Ball </h1>
+                <button type="reset" class=" reset-btn button "> Reset </button>
             </div>
-            <div class="col-3">
+            <div class="col-3 player2-box">
                 <div class="quantity-btn-container">
                     <p class="player">Player 2</p>
                     <span id="quantity2" class="score">0</span>
                     <div class="d-flex justify-content-between incre-dicre-box">
-                        <button type="button" class="incre-dicre-btn" onclick="decrement(2)">
+                        <button type="button" class="incre-dicre-btn bg-red" onclick="decrement(2)">
                             -
                         </button>
 
-                        <button type="button" class="incre-dicre-btn" onclick="increment(2)">
+                        <button type="button" class="incre-dicre-btn bg-green" onclick="increment(2)">
                             +
                         </button>
                     </div>
@@ -63,6 +64,7 @@
             else {
                 quantity2Element.innerText = ++quantity2;
             }
+            if
 
 
         }

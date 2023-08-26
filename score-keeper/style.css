@@ -3,17 +3,31 @@
     padding-left: 15px;
     padding-right: 15px;
     font-size: 20px;
-    width: 50px;
+    width: 70px;
     border-radius: 20px;
-
+}
+body{
+    background-color: #0a0a0a;
+}
+.bg-green{
+    background-color: #33ff33;
+}
+.bg-red{
+    background-color: #ff0000;
 }
 .box-border{
-    border: 5px double black;
+    box-shadow: 0px 0px 10px 3px white;
     height: 70vh;
+    margin-top: 100px;
+}
+.main-heading
+{
+    color: ;
 }
 .score{
     display: block;
     text-align: center;
+    color: wheat;
     font-size: 100px;
     margin-top: 30px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,7 +42,13 @@
 .reset-btn{
     position: absolute;
     bottom: 5px;
-    left: 45%;
+    left: 42%;
+    width: 100px;
+    border: 2px solid black;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 20px;
+    border-radius: 20px;
 }
 .incre-dicre-box{
     margin-top: 100px;
@@ -36,5 +56,38 @@
 .player{
     text-align: center;
     font-size: 50px;
+    color: rgb(7, 202, 7);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.player1-box{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
+    url(player1.jpg);
+    opacity: 1;
+    background-size:100% 68vh ;
+}
+.player2-box{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
+     url(player2.jpg);
+     opacity: 1;
+    background-size:100% 68vh ;
+}
+
+
+button {
+    width: 170px;
+    height: 40px;
+    color: white;
+    background-color:  #0a0a0a;;
+    font-size: 20px;
+    border-bottom: 1px solid white;
+    border-left: 1px solid #ff0066;
+    border-right: 1px solid #ff0066;
+    border-top: 1px solid white;
+    border-radius: 20px;
+    transition: 0.5s;
+  }
+
+  button:hover {
+    background-color: #ff0066;
+    border: none;
+  }
