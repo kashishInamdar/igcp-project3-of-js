@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+.bulb-card
+{
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 1px 10px 1px gray;
+   height: 320px;
+   width: 200px;
+   margin: 40px;
+   margin-left: 320px;
+}
+
+.bulb-img
+{
+   font-size: 150px;
+margin: 20px;
+margin-left: 36px;
+    color: black;
+}
+.bulb-color-red{
+    color: red;
+
+}
+.bulb-color-blue{
+    color: blue;
+}
+
+.bulb-color-pink{
+    color: pink;
+    
+}
+.bulb-color-yellow{
+    color: yellow;
+}
+.bulb-color-green{
+    color: green;
+}
+
+.bulb-color-voilet{
+    color: violet;
+}
+
+.bulb-color-orange{
+    color:orange;
+}
+
+.bulb-color-off{
+    color:black;
+}
+
+
+.img-btn
+{
+    margin-top: 10px;
+    margin-left: 3px;
+}
+
+    </style>
+   
+</head>
+<body>
+    
+    
+<div class="bulb-card">
+    <div>
+    <i class="fa-solid fa-lightbulb bulb-img"  id="bulb"  ></i>
+    </div>
+    
+    <div class="img-btn">
+    <button type="button" onclick="redbulb()" class="btn">Red</button>
+
+    <button type="button" onclick="bluebulb()" class="btn">Blue</button>
+
+    <button type="button" onclick="pinkbulb()" class="btn">Pink</button>
+
+    <button type="button" onclick="yellowbulb()" class="btn">Yellow</button><br><br>
+
+    <button type="button" onclick="greenbulb()" class="btn">Green</button>
+
+    <button type="button" onclick="voiletbulb()" class="btn">Voilet</button>
+
+    <button type="button" onclick="orangetbulb()" class="btn">Orange</button><br><br>
+    <button type="button" onclick="offbulb()" class="btn">Off</button>
+    </div>
+</div>
+    
+<script> 
+
+    const bulb = document.getElementById("bulb");
+
+    function redbulb()
+    {
+        bulb.className = "fa-solid fa-lightbulb bulb-img bulb-color-red";
+ }  
+    
+    function bluebulb()
+      {
+       bulb.className="fa-solid fa-lightbulb bulb-img bulb-color-blue";
+       
+      }
+
+      function pinkbulb()
+      {
+       bulb.className="fa-solid fa-lightbulb bulb-img bulb-color-pink";
+       
+      }
+
+      function yellowbulb()
+      {
+       bulb.className="fa-solid fa-lightbulb bulb-img bulb-color-yellow";
+       
+      }
+
+      function greenbulb()
+      {
+       bulb.className="fa-solid fa-lightbulb bulb-img bulb-color-green";
+       
+      }
+
+      function voiletbulb()
+      {
+       bulb.className="fa-solid fa-lightbulb bulb-img bulb-color-voilet";
+       
+      }
+      function orangetbulb()
+      {
+       bulb.className="fa-solid fa-lightbulb bulb-img bulb-color-orange";
+       
+      }
+
+      function offbulb()
+      {
+       bulb.className="fa-solid fa-lightbulb bulb-img bulb-color-off";
+       
+      }
+     
+    </script>
+
+</body>
+</html>
