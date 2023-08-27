@@ -18,7 +18,9 @@
    height: 320px;
    width: 250px;
    margin: 40px;
-   margin-left: 320px;
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
 }
 
 .bulb-img
@@ -59,7 +61,7 @@ margin-left: 63px;
 .bulb-color-off{
     color:black;
 }
-.bulb-color-burgundy{
+.bulb-color-skyblue{
     color:rgb(93, 200, 243);
 }
 
@@ -254,7 +256,7 @@ h1
 
     <button type="button" onclick="orangebulb()" class="orangebtn">Orange</button>
     
-    <button type="button" onclick="burgundybulb()" class="skyblue">Sky blue</button>
+    <button type="button" onclick="skybluebulb()" class="skyblue">Sky blue</button>
     
     </div>
 </div>
@@ -309,9 +311,9 @@ h1
        
       }
 
-      function burgundybulb()
+      function skybluebulb()
       {
-       bulb.className="fa-solid fa-lightbulb bulb-img bulb-color-off";
+       bulb.className="fa-solid fa-lightbulb bulb-img bulb-color-skyblue";
        
       }
      
