@@ -20,6 +20,7 @@
         font-weight: bold;
         color: #ff0066;
         text-align: center;
+        padding-top: 10px;
         
       }
      
@@ -41,6 +42,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
       }
       .col-2{
         width: 20%;
@@ -51,12 +53,52 @@
         align-items: center;
 
       }
+      .towdice{
+        width: 150px;
+        filter: drop-shadow(0 0 30px red);
+      }
       .playboth{
         margin-bottom: 40px;
       }
       .dice {
         width: 300px;
         filter: drop-shadow(0px 0px 30px red);
+      }
+      .size{
+        position: absolute;
+        width: 0;
+      }
+
+
+      .six{
+        filter: drop-shadow(0 0 30px red);
+        width:0px;
+        transform: scale(0);
+        position: absolute;
+        animation-name: sixer;
+        animation-delay: 0.2s;
+        animation-iteration-count:1;
+        animation-timing-function:linear;
+        animation-duration: 1s;
+        transform: translateY(0);
+        bottom: 270px;
+      }
+      @keyframes sixer{
+        0%{
+          transform: scale(0);
+          transform: translateY(0);
+          width: 0px;
+        }
+        50%{
+          transform: scale(1);
+          transform: translateY(-60px);
+          width: 100px;
+        }
+        100%{
+          transform: scale(2);
+         transform: translateY(-140px);
+         width: 200px;
+        }
       }
       .playturn{
         display:flex;
@@ -118,6 +160,8 @@
       <div class="col-5">
         <div class="subheading">Player A</div>
         <img src="./img/dice.png" alt="" class="dice" id="dice1" />
+        <img src="./img/six.png" alt="" class="size" id="six1">
+        <img src="./img/four.png" alt="" class="size" id="four1">
         <div class="playturn">
         <img src="./img/player1.png" alt="" class="img-player">
         <button type="button" onclick="turnofplayer(1)" class="playbutton">
@@ -125,12 +169,17 @@
         </button>
         </div>
       </div>
-      <div class="col-2"><button type="button" onclick="turnofbothplayer(1,2)" class="playbutton playboth"> Play Both
-    </button></div>
+    
+      <div class="col-2">
+        <img src="./img/towdice.png" alt="" class="towdice">
+        <button type="button" onclick="turnofbothplayer(1,2)" class="playbutton playboth"> Play Both</button>
+      </div>
        
       <div class="col-5">
         <div class="subheading">Player B</div>
         <img src="./img/dice.png" alt="" class="dice" id="dice2" />
+        <img src="./img/six.png" alt="" class="size" id="six2">
+        <img src="./img/four.png" alt="" class="size" id="four2">
         
            <div class="playturn"> <img src="./img/player2.png" alt="" class="img-player">
             <button type="button" onclick="turnofplayer(2)" class="playbutton">
@@ -143,6 +192,8 @@
     <script>
        function turnofplayer(index){
         const dice=document.getElementById(`dice${index}`)
+        const six=document.getElementById(`six${index}`)
+        const four=document.getElementById(`four${index}`)
         
         const rollthedice=Math.floor(Math.random()*(7-1)+1)
         dice.classList.add("rotatedice")
@@ -164,12 +215,26 @@
                   break;
               case 4:
                   dice.src="./img/dice4.png"
+                  setTimeout(function addfour(){
+                    four.className="six"
+                  },100)
+                
+                    four.className="size"
+                 
+
                   break;
               case 5:
                   dice.src="./img/dice5.png"
                   break;
               case 6:
                   dice.src="./img/dice6.png"
+                  
+                  setTimeout(function addsix(){
+                    six.className="six"
+                  },100)
+                 
+                    six.className="size"
+                  
                  }
 
         },700)
@@ -182,6 +247,10 @@
         const dice2=document.getElementById(`dice${index2}`)
         const rollthedice1=Math.floor(Math.random()*(7-1)+1)
         const rollthedice2=Math.floor(Math.random()*(7-1)+1)
+        const six1=document.getElementById(`six${index1}`)
+        const six2=document.getElementById(`six${index2}`)
+        const four1=document.getElementById(`four${index1}`)
+        const four2=document.getElementById(`four${index2}`)
 
         dice1.classList.add("rotatedice")
         setTimeout(function addanimation(){
@@ -208,12 +277,22 @@
                   break;
               case 4:
                   dice1.src="./img/dice4.png"
+                  setTimeout(function addfour(){
+                    four1.className="six"
+                  },100)
+                
+                    four1.className="size"
                   break;
               case 5:
                   dice1.src="./img/dice5.png"
                   break;
               case 6:
                   dice1.src="./img/dice6.png"
+                  setTimeout(function addsix(){
+                    six1.className="six"
+                  },100)
+                 
+                    six1.className="size"
                  }
 
         },700)
@@ -232,12 +311,22 @@
                   break;
               case 4:
                   dice2.src="./img/dice4.png"
+                  setTimeout(function addfour(){
+                    four2.className="six"
+                  },100)
+                
+                    four2.className="size"
                   break;
               case 5:
                   dice2.src="./img/dice5.png"
                   break;
               case 6:
                   dice2.src="./img/dice6.png"
+                  setTimeout(function addsix(){
+                    six2.className="six"
+                  },100)
+                 
+                    six2.className="size"
           }
                  },700)
         }
