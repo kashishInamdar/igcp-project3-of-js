@@ -63,7 +63,7 @@ body{
     background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
     url(player1.jpg);
     opacity: 1;
-    background-size:100% 68vh ;
+    background-size:100% 70vh ;
 }
 .player2-box{
     background-image:linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),

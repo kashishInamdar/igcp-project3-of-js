@@ -28,7 +28,7 @@
             </div>
             <div class="col-6  reset-box">
                 <h1 class="main-heading"> Play Foot Ball </h1>
-                <button type="reset" id="reset" class=" reset-btn button "> Reset </button>
+                <button type="reset" onclick="resetBtn()" class=" reset-btn button "> Reset </button>
             </div>
             <div class="col-3 player2-box">
                 <div class="quantity-btn-container">
@@ -53,11 +53,15 @@
     <script>
         const quantity1Element = document.getElementById("quantity1");
         const quantity2Element = document.getElementById("quantity2");
-        const reset = document.getElementById("reset");
+        // const reset = document.getElementById("reset");
 
         let quantity1 = parseInt(quantity1Element.innerText);
         let quantity2 = parseInt(quantity2Element.innerText);
 
+        function resetBtn(){
+            quantity1Element.innerText = "0";
+            quantity2Element.innerText = "0";
+        }
         function increment(num) {
             if (num == 1) {
                 quantity1Element.innerText = ++quantity1;
@@ -65,8 +69,6 @@
             else {
                 quantity2Element.innerText = ++quantity2;
             }
-
-
         }
         function decrement(num) {
             if (num == 1) {
