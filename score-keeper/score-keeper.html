@@ -58,17 +58,22 @@
         let quantity1 = parseInt(quantity1Element.innerText);
         let quantity2 = parseInt(quantity2Element.innerText);
 
-        function resetBtn(){
+        function resetBtn() {
             quantity1Element.innerText = "0";
             quantity2Element.innerText = "0";
         }
         function increment(num) {
-            if (num == 1) {
-                quantity1Element.innerText = ++quantity1;
+            if (quantity1 < 10 && quantity2 < 10) {
+                if (num == 1) {
+                    quantity1Element.innerText = ++quantity1;
+                }
+                else {
+                    quantity2Element.innerText = ++quantity2;
+                }  
             }
-            else {
-                quantity2Element.innerText = ++quantity2;
-            }
+            if( quantity1 == 10 && quantity2 == 10){
+                    alert("😍Team A✨ is win🎉 🥳")
+                }
         }
         function decrement(num) {
             if (num == 1) {
@@ -78,7 +83,7 @@
                 quantity2Element.innerText = --quantity2;
             }
         }
-        
+
     </script>
 
 </body>
