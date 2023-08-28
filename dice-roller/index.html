@@ -79,7 +79,7 @@
         animation-delay: 0.2s;
         animation-iteration-count:1;
         animation-timing-function:linear;
-        animation-duration: 1s;
+        animation-duration: 0.8s;
         transform: translateY(0);
         bottom: 270px;
       }
@@ -110,6 +110,11 @@
       }
       .img-player{
         width: 100px;
+       
+      }
+      .audio-player{
+        width: 100px;
+        position: absolute;
       }
       .playbutton {
         /* width: 200px;
@@ -155,20 +160,21 @@
   </head>
   <body>
     <div class="container">
-      <div class="heading">Roll Dice</div>
+      <div class="heading">Roll The Dice</div>
      <div class="row">
       <div class="col-5">
         <div class="subheading">Player A</div>
         <img src="./img/dice.png" alt="" class="dice" id="dice1" />
         <img src="./img/six.png" alt="" class="size" id="six1">
         <img src="./img/four.png" alt="" class="size" id="four1">
+        <!-- <audio src="./dice-142528.mp3" controls  class="audio-player"    id="audio1"></audio> -->
         <div class="playturn">
-        <img src="./img/player1.png" alt="" class="img-player">
+        <img src="./img/player1.png" alt="" class="img-player" >
         <button type="button" onclick="turnofplayer(1)" class="playbutton">
           play Your turn
         </button>
         </div>
-      </div>
+      </div> 
     
       <div class="col-2">
         <img src="./img/towdice.png" alt="" class="towdice">
@@ -180,7 +186,7 @@
         <img src="./img/dice.png" alt="" class="dice" id="dice2" />
         <img src="./img/six.png" alt="" class="size" id="six2">
         <img src="./img/four.png" alt="" class="size" id="four2">
-        
+        <!-- <audio src="./dice-142528.mp3" controls  class="audio-player" id="audio2"></audio> -->
            <div class="playturn"> <img src="./img/player2.png" alt="" class="img-player">
             <button type="button" onclick="turnofplayer(2)" class="playbutton">
               play Your turn
@@ -189,19 +195,38 @@
      
     </div>
      </div>
+     
     <script>
+    
        function turnofplayer(index){
         const dice=document.getElementById(`dice${index}`)
         const six=document.getElementById(`six${index}`)
         const four=document.getElementById(`four${index}`)
-        
+        // const audio=document.getElementById(`audio${index}`)
+    //     audio.setAttribute("autoplay","true")
+    //     // audio.setAttribute("loop","true")
+     
+    // setTimeout(function removeaudio(){
+    //   audio.se
+    // },5000)
+    var audio = new Audio('./dice-142528.mp3');
+audio.play();
+       
+
+       
+
+
         const rollthedice=Math.floor(Math.random()*(7-1)+1)
-        dice.classList.add("rotatedice")
         setTimeout(function addanimation(){
+          dice.classList.add("rotatedice")
+        },300)
+        
+        setTimeout(function removeanimation(){
             dice.classList.remove("rotatedice")
 
         },700)
-        setTimeout(function showingthenum(){
+      
+        setTimeout(function displaydicenum(){
             switch (rollthedice)
           {
               case 1:
@@ -237,9 +262,9 @@
                   
                  }
 
-        },700)
+        },500)
 
-
+       
 
       }
       function turnofbothplayer(index1,index2){
@@ -252,18 +277,26 @@
         const four1=document.getElementById(`four${index1}`)
         const four2=document.getElementById(`four${index2}`)
 
+
         dice1.classList.add("rotatedice")
-        setTimeout(function addanimation(){
+        setTimeout(function removeanimation(){
             dice1.classList.remove("rotatedice")
 
         },700)
         dice2.classList.add("rotatedice")
-        setTimeout(function addanimation(){
+        setTimeout(function removeanimation(){
             dice2.classList.remove("rotatedice")
 
         },700)
+        
+        var audio = new Audio('./dice-142528.mp3');
+audio.play();
 
-        setTimeout(function showingthenum(){
+var audio = new Audio('./dice-142528.mp3');
+audio.play();
+
+        setTimeout(function displaydicenum(){
+
             switch (rollthedice1)
           {
               case 1:
