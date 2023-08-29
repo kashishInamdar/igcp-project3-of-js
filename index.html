@@ -17,16 +17,20 @@
         padding: 0;
         box-sizing: border-box;
       }
-      /* body{
-             background-color:#a90707;
-               } */
+      .mainheading {
+        color: #ff0066;
+        text-align: center;
+        font-size: 60px;
+        margin-top: 30px;
+        text-shadow: 1px 1px 2px white, 0 0 1em #ff0066, 0 0 0.2em #ff0066;
+      }
       .container {
         display: flex;
       }
       .sidebar-open {
         width: 380px;
         height: 100vh;
-        background-color: white;
+        /* background-color: white; */
 
         position: sticky;
         top: 0;
@@ -35,42 +39,59 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        background: linear-gradient(220deg,#ff0066,#cf88a5,#ff0066 );
       }
       #sidebar ul {
-        width: 100%;
-        height: 80%;
+        /* width: 100%;
+        height: 80%; */
 
-        display: flex;
+        /* display: flex;
         justify-content: space-evenly;
         align-items: center;
-        flex-direction: column;
+        flex-direction: column; */
+        padding: auto;
+        margin-left: auto;
+        margin-right: auto;
       }
       #sidebar ul li {
-        list-style: none;
+       list-style: none;
+       padding-top: 30px;
+       padding-bottom:30px;
       }
       #sidebar ul li a {
         text-decoration: none;
-        color: #ff0066;
+        color: white;
         font-size: 30px;
+        transition: 1s;
+        
+      }
+      #sidebar ul li:hover a {
+        text-shadow: 1px 1px 2px white, 0 0 1em #ff0066, 0 0 0.2em #ff0066;
+     
+  
+     
+        
+        
       }
 
       .sidebar-close {
-        /* transform: translateX(-330px); */
+     
         margin-left: -380px;
+        
       }
       .slowadd {
-        margin: 0px;
+       margin-left: 0px;
         animation-name: translateright;
-        animation-duration: 0.3s;
+        animation-duration: 0.4s;
         animation-timing-function: linear;
         animation-iteration-count: 1;
       }
       @keyframes translateright {
         0% {
-          margin: 0px;
+          margin-left: 0px;
         }
         100% {
-          margin: -380px;
+        margin-left: -380px;
         }
       }
 
@@ -104,6 +125,7 @@
        top: 10px; */
         right: 10px;
         top: 10px;
+        color: white;
       }
 
       .container-item2 {
@@ -118,6 +140,7 @@
         left: 15px;
         color: white;
         font-size: 40px;
+        position: fixed;
       }
 
       /* #0a0a0a; */
@@ -129,42 +152,81 @@
       }
       .class {
         height: 550px;
-        width: 30%;
+        width: 28%;
         border-radius: 10px;
-        border: 2px wheat double;
-        background-color: white;
-        box-shadow: 0px 0px 10px 3px white;
+     
+        background-color:#2c2929;
+        box-shadow: 0px 0px 15px 0.1px #e43a7e;
       }
-      .seconddiv {
+      .class:hover {
+      
+        box-shadow: 0px 0px 20px 1px #f00764;
+      }
+      /* .seconddiv {
         margin-top: 50px;
-      }
+      } */
       .img {
         height: 60%;
         width:100%;
         border-radius: 10px 10px 0 0;
       }
-      a {
+      .card-head{
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+       text-align:center;
+       margin: 10px auto;
+display: block;
         text-decoration: none;
-        display: block;
-        text-align: center;
-        color: red;
+      }
+      .btn-link{
+        text-decoration: none;
+        
+        color: white;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
       .text {
+        font-size: 25px;
         text-align: center;
-        color: black;
+        color: white;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
-      .mainheading {
-        color: rgb(226, 41, 41);
-        text-align: center;
-        font-size: 45px;
+      .text-link{
+        display: inline;
+        color: #ff0066;
       }
+      
+
+      .card-btn{
+          width: 170px;
+          height: 40px;
+          color: white;
+          background-color:  #2c2929;
+  font-size: 20px;
+          border-bottom: 1px solid white;
+          border-left: 1px solid #ff0066;
+          border-right: 1px solid #ff0066;
+          border-top: 1px solid white;
+          border-radius: 20px;
+          transition: 0.5s;
+          display: block;
+          margin: 20px auto;
+        }
+  
+       .card-btn:hover {
+          background-color: #ff0066;
+          border: none;
+        }
+        .footer{
+          width: 100%;
+          height: 400px;
+          background-color: #2c2929;
+        }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="sidebar-open sidebar-close" id="sidebar">
+      <div class="sidebar-open sidebar-close " id="sidebar">
         <span onclick="sidebarclose()"
           ><i class="fa-solid fa-xmark menu-xmark"></i
         ></span>
@@ -182,65 +244,83 @@
         ></span>
         <h1 class="mainheading">WORK ON JAVASCRIPT</h1>
         <div class="container-child">
-          <div class="class">
+          <div class="class" >
             <img src="./images/dice4.webp" class="img" />
-            <a href="./dice-roller/index.html"> WANT TO PLAY</a>
-            <p class="text">THIS PAGE IS DEVELOPED BY CHNADIDNI</p>
-            <a
+
+            <a href="./dice-roller/index.html" class="card-head">Roll The Dice</a>
+          <p class="text">Page Is Created By<a href="https://github.com/chandrajyoti123" class="text-link">@chandrajyoti123</a></p>
+           
+            <button type="button" class="card-btn"> <a class="btn-link"
               href=" https://github.com/junedmd/igcp-project3-of-js/tree/main/dice-roller"
-              >check here source code</a
-            >
+              >source code</a
+            ></button>
+
           </div>
           <div class="class">
             <img src="./cardgallery/general.jpg" class="img" />
-            <a href="./cardgallery/cardgallery.html"> LETS EXPLORE BMW</a>
-            <p class="text">THIS PAGE IS DEVELOPED BY JUNED</p>
-            <a
+            <a href="./cardgallery/cardgallery.html" class="card-head">imges changer</a>
+            <p class="text">Page Is Created By <a href="https://github.com/junedmd" class="text-link">@junedmd</a></p>
+           
+            <button type="button" class="card-btn">  <a class="btn-link"
               href="https://github.com/junedmd/igcp-project3-of-js/tree/main/cardgallery"
             >
-              check here source code
-            </a>
+             source code
+            </a></button>
           </div>
         </div>
-        <div class="container-child seconddiv">
+        <div class="container-child ">
           <div class="class">
             <img src="./images/bmi.webp" class="img" />
-            <a href="./bmi-calculator/index.html"> THE BMI CALULATOR </a>
-            <p class="text">THIS PAGE IS DEVELOPED BY CHANDINI</p>
-            <a
+            <a href="./bmi-calculator/index.html" class="card-head"> THE BMI CALULATOR </a>
+            <p class="text">Page Is Created By <a href="https://github.com/chandrajyoti123" class="text-link">@chandrajyoti123</a></p>
+           
+
+            <button type="button" class="card-btn">  <a class="btn-link"
               href="https://github.com/junedmd/igcp-project3-of-js/commits?author=chandrajyoti123"
-              >check here source code</a
-            >
+              >source code</a
+            ></button>
           </div>
           <div class="class">
             <img src="./images/bulb1.png" class="img" />
-            <a href="./bulb-on-of/bulb.html"> THE BULB GAME </a>
-            <p class="text">THIS PAGE IS DEVELOPED BY MANSI</p>
-            <a
+            <a href="./bulb-on-of/bulb.html" class="card-head"> THE BULB GAME </a>
+             <p class="text">Page Is Created By<a href="https://github.com/mansidethe" class="text-link">@mansidethe</a></p>
+           
+
+            <button type="button" class="card-btn">  <a class="btn-link"
               href="https://github.com/junedmd/igcp-project3-of-js/tree/main/bulb-on-of"
-              >check here source code</a
-            >
+              >source code</a
+            ></button>
           </div>
         </div>
-        <div class="container-child">
-          <div
-            class="class"
-            style="
-              display: block;
-              margin-left: auto;
-              margin-right: auto;
-              margin-top: 50px;
-            "
-          >
-            <img src="./images/score.avif" class="img" />
-            <a href="./score-keeper/score-keeper.html"> THE SCORE OF GAME</a>
-            <p class="text">THIS PAGE IS DEVELOPED BY KASHISH</p>
-            <a
-              href="https://github.com/junedmd/igcp-project3-of-js/tree/main/score-keeper"
-              >check here source code</a
-            >
-          </div>
+        <div class="container-child ">
+          <div class="class">
+          <img src="./images/score.avif" class="img" />
+          <a href="./score-keeper/score-keeper.html" class="card-head"> THE SCORE OF GAME</a>
+          <p class="text">Page Is Created By<a href="https://github.com/kashishInamdar" class="text-link">@kashishInamdar</a></p>
+         
+
+          <button type="button" class="card-btn">  <a class="btn-link"
+            href="https://github.com/junedmd/igcp-project3-of-js/tree/main/score-keeper"
+            >source code</a
+          ></button>
         </div>
+        <div class="class">
+          <img src="./images/bmi.webp" class="img" />
+          <a href="./bmi-calculator/index.html" class="card-head"> THE BMI CALULATOR </a>
+          <p class="text">Page Is Created By <a href="https://github.com/chandrajyoti123" class="text-link">@chandrajyoti123</a></p>
+         
+
+          <button type="button" class="card-btn">  <a class="btn-link"
+            href="https://github.com/junedmd/igcp-project3-of-js/commits?author=chandrajyoti123"
+            >source code</a
+          ></button>
+        </div>
+          
+        </div>
+        <div class="footer">
+
+        </div>
+       
       </div>
     </div>
 
@@ -250,14 +330,15 @@
         sidebar.classList.add("slowadd");
         setTimeout(function addingslowmove() {
           sidebar.classList.remove("slowadd");
-        }, 300);
+        }, 400);
 
         sidebar.classList.add("sidebar-close");
         const xmark = document.getElementById("xmark");
         setTimeout(function showmenuas() {
           xmark.style.display = "block";
-        }, 200);
-      }
+          xmark.style.position="fixed"
+        }, 450);
+      }f
       function sidebaropen() {
         const sidebar = document.getElementById("sidebar");
         sidebar.classList.add("slowremove");
