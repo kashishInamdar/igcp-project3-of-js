@@ -219,9 +219,110 @@ display: block;
         }
         .footer{
           width: 100%;
-          height: 400px;
+          height: 350px;
           background-color: #2c2929;
+          display: flex;
+          padding: 30px 0;
         }
+
+.col-5{
+  width: 30%;
+  
+  height: 100%;
+  
+  padding-top: 20px;
+
+}
+.padding-left{
+  padding-left: 100px;
+}
+
+
+.footer-main-heading{
+  font-size:35px ;
+  text-shadow: 1px 1px 2px white, 0 0 1em #ff0066, 0 0 0.2em #ff0066;
+  color: #f00764;
+}
+.col-5 .para{
+  font-size: 25px;
+  color: white;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+        .col-4{
+          width: 20%;
+          height: 100%;
+         
+       
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          padding-top: 20px;
+
+
+        }
+        .footer-heading{
+          font-size: 35px;
+          font-weight: bold;
+          color: #ff0066;
+          text-shadow: 1px 1px 2px white, 0 0 1em #ff0066, 0 0 0.2em #ff0066;
+        }
+        .col-4 ul{
+          padding-left: 0px;
+          padding-top: 10px;
+          
+        }
+        .col-4 ul li{
+          list-style: none;
+          padding: 7px 0;
+
+        }
+        .col-4 ul li a{
+          text-decoration: none;
+          font-size: 23px;
+          color: white;
+        }
+        .col-4 ul li a:hover{
+          color: #ff0066;
+        }
+        
+        .col-5 span{
+          display: block;
+          padding: 10px 0;
+
+        }
+        .col-5 span a{
+          text-decoration: none;
+          color: white;
+          font-size: 25px;
+        }
+        .col-5 span a i{
+          color: #f00764;
+          padding-right: 10px;
+          font-size: 23px;
+        }
+        .col-5 ul{
+      padding: 15px 50px;
+
+        }
+        .col-5 ul li{
+          list-style: none;
+          display: inline-block;
+          margin: 0 10px;
+
+        }
+        .col-5 ul li a i{
+          font-size: 30px;
+          color: white;
+          transition: 0.5s;
+        }
+        .col-5 ul li:hover a i{
+          color: #ff0066;
+          transform: translateY(-5px);
+        }
+       
     </style>
   </head>
   <body>
@@ -317,12 +418,57 @@ display: block;
         </div>
           
         </div>
-        <div class="footer">
-
-        </div>
+       
        
       </div>
     </div>
+
+    <div class="footer">
+      <div class="col-5 padding-left">
+        
+          <div class="footer-main-heading">Works On Javascript</div>
+        <p class="para">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur molestias natus aliquam cumque ipsa blanditiis dolore, dicta velit! A magnam aliquam rem non commodi. Odit delectus ut pariatur voluptatem! Accusamus.
+        </p>
+        
+      </div>
+      <div class="col-4">
+        <div class="footer-heading">Quiks Link</div>
+        <ul>
+          <li><a href="./dice-roller/index.html">Roll The Dice</a></li>
+          <li><a href="./bmi-calculator/index.html">BMI Calculator</a></li>
+          <li><a href="./cardgallery/">Card Gallery</a></li>
+          <li><a href="./score-keeper/score-keeper.html">Score Keeper</a></li>
+          <li><a href="./bulb-on-of/bulb.html">Bulb on of</a></li>
+        </ul>
+
+      </div>
+      <div class="col-4">
+        <div class="footer-heading">Know More </div>
+        <ul>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Top Projects</a></li>
+          <li><a href="#">Latest Project</a></li>
+        </ul>
+       
+        
+
+      </div>
+      <div class="col-5">
+        <div class="footer-heading"> Contact Us </div>
+        <span> <a href="tel:9559223041"><i class="fa-solid fa-phone"></i>+917559223041</a></span>
+        <span><a href="mailto:chandrajyotiadil15062003@gmail.com"> <i class="fa-solid fa-envelope"></i>chandrajyotiadil15062003@gmail.com</a></span>
+        <ul>
+          <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+        </ul>
+
+      </div>
+
+    </div> 
 
     <script>
       function sidebarclose() {
