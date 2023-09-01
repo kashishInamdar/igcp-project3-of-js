@@ -207,17 +207,11 @@
             
           
         }
-
-
-        /* a{
+       /* a{
             position: relative;
             bottom: 350px;
         } */
-
-
-
-
-  }
+}
   
 
     </style>
@@ -227,11 +221,11 @@
     <div>
          <div class="navbar">
             <ul>
-                <li><h2 id="bmw" onclick="bmw()">BMW</h2></li>
-                <li><h2 id="lamborgini" onclick="lamborgini()">lamborgini</h2></li>
-                <li><h2 id="Ferari" onclick="ferari()">Ferari</h2></li>
-                <li><h2 id="bugaati" onclick="bugaati()"> Bugaati</h2></li>
-                <li><h2 id="Mercedez" onclick="pagani()">  Pagani huayra</h2></li>
+                <li><h2 id="bmw" onclick="carimgchange('./bmw/general.jpg')">BMW</h2></li>
+                <li><h2 id="lamborgini" onclick="carimgchange('./lamborgini/general.webp')">lamborgini</h2></li>
+                <li><h2 id="Ferari" onclick="carimgchange('./ferari/general.webp')">Ferari</h2></li>
+                <li><h2 id="bugaati" onclick="carimgchange('./bugaati/general.webp')"> Bugaati</h2></li>
+                <li><h2 id="Mercedez" onclick="carimgchange('./pagani/general.jpg')">  Pagani huayra</h2></li>
             </ul>
          </div>    
        
@@ -242,9 +236,9 @@
             </div>
             <div class="box2" id="box2" >
                 <h2 class="head1">BMW i8</h2><BR>
-                <p class="info">The BMW i8 is a hybrid sports car. It uses the BMW eDrive technology which uses the advantages of an electric motor and combustion engine technologies. .</p><br>
+                <p class="info" >The BMW i8 is a hybrid sports car. It uses the BMW eDrive technology which uses the advantages of an electric motor and combustion engine technologies. .</p><br>
 
-                <h2 class="head2"> Features of BMW i8</h2><br>
+                <h2 class="head2" > Features of BMW i8</h2><br>
                 <div class="information">
                     
                     <div>
@@ -268,24 +262,57 @@
 
         </div>
 
-        <!-- './general.jpg','./lamborgini/general.webp','./ferari/general.webp','./jaguaar/general.avif','./mercedez/general.webp' -->
-       
         <div class="btns">
-            <button class="btn" onclick="allview('./general.jpg','./lamborgini/general.webp','./ferari/general.webp','./jaguaar/general.avif','./mercedez/general.webp',1)" id="img1"> <i class="fa fa-car" aria-hidden="true"></i> Side View</button>
+            <button class="btn" onclick="sideview()" id="img1"> <i class="fa fa-car" aria-hidden="true"></i> Side View</button>
 
-            <button class="btn" onclick="allview('./innerview.jpg','./lamborgini/top.webp','./ferari/inner.webp','./jaguaar/inner1.webp','./mercedez/inner.webp',2)" id="img2"> <i class="fa fa-car" aria-hidden="true"></i> Inner View</button>
+            <button class="btn" onclick="innerview()" id="img2"> <i class="fa fa-car" aria-hidden="true"></i> Inner View</button>
 
-            <button class="btn" onclick="allview('./general.jpg','./lamborgini/right-side1webp','./ferari/front.webp','./jaguaar/front.webp','./mercedez/front.webp',3)" id="img3"> <i class="fa fa-car" aria-hidden="true"></i>  Back View</button>
+            <button class="btn" onclick="backview()" id="img3"> <i class="fa fa-car" aria-hidden="true"></i>  Back View</button>
 
-            <button class="btn" onclick="allview('./backview.jpg','./lamborgini/back.webp','./ferari/back.webp','./jaguaar/front.webp','./mercedez/inner.webp',4)" id="img4"> <i class="fa fa-car" aria-hidden="true"></i>  front View</button>
+            <button class="btn" onclick="frontview()" id="img4"> <i class="fa fa-car" aria-hidden="true"></i>  front View</button>
 
         </div>
         <a href="./../index.html"> HOME</a>
        <br><br><br><br><br>
 
-       <!-- forlamborgini -->
-       <div class="box3" id="box3" >
-        <h2 class="head1">Lamborghini</h2><BR>
+       
+        
+     
+
+
+       <script>
+        let carsrc;
+        const carimg=document.getElementById('carimg')
+    function carimgchange(imgofcar){
+        carimg.src=imgofcar;
+          carsrc=imgofcar;
+          const  box2=document.getElementById('box2')
+          if(imgofcar=='./bmw/general.jpg'){
+            box2.innerHTML=`   <h2 class="head1">BMW i8</h2><BR>
+                <p class="info" >The BMW i8 is a hybrid sports car. It uses the BMW eDrive technology which uses the advantages of an electric motor and combustion engine technologies. .</p><br>
+
+                <h2 class="head2" > Features of BMW i8</h2><br>
+                <div class="information">
+                    
+                    <div>
+                        <h4>ENGINE</h4>
+                        <p>1499CCC</p>
+                    </div>
+                    <div>
+                        <h4>FUEL & MILEAGE</h4>
+                        <p>47.45 kmpl.</p>
+                    </div>
+                    <div>
+                        <h4>TRANSMISSION</h4>
+                        <p>357 hp</p>
+                    </div>
+                </div><br>
+                 
+                <h3 class="info1">THE  BMW i8 IS PRICE AT  RS 2.62 CARORE</h3>`
+          }
+          else if(imgofcar=='./lamborgini/general.webp'){
+            box2.innerHTML=`
+            <h2 class="head1">Lamborghini</h2><BR>
         <p class="info">Automobili Lamborghini S.p.A. is an Italian manufacturer of luxury sports cars and SUVs based in Sant'Agata Bolognese. The company is owned by the Volkswagen Group through its subsidiary Audi..</p><br>
 
         <h2 class="head2"> Features of lamborgini</h2><br>
@@ -305,13 +332,11 @@
             </div>
         </div><br>
          
-        <h3 class="info1">THE  Lamborghini i8 IS PRICE AT  RS 3.40  to RS 4.22 CARORE</h3>
-        
-     
-    </div><br><br><br><br>
-    <!-- forferarri -->
-    <div class="box4"  id="box4" >
-        <h2 class="head1">Ferari</h2><BR>
+        <h3 class="info1">THE  Lamborghini i8 IS PRICE AT  RS 3.40  to RS 4.22 CARORE</h3>`
+          }
+          else if(imgofcar=='./ferari/general.webp'){
+            box2.innerHTML=`
+            <h2 class="head1">Ferari</h2><BR>
         <p class="info">Ferrari S.p.A. is an Italian luxury sports car manufacturer based in Maranello, Italy. Founded in 1939 by Enzo Ferrari, the company adopted its current name in 1945 and began producing its line of cars in 1947. Ferrari became a public .</p><br>
 
         <h2 class="head2"> Features of ferari8</h2><br>
@@ -331,14 +356,10 @@
             </div>
         </div><br>
          
-        <h3 class="info1">THE  ferari i8 IS PRICE AT  RS 3.50 CARORE</h3>
-        
-     
-    </div> 
-    <br><br><br><br>
-    <!-- forbugaati -->
-    <div class="box5"  id="box5" >
-        <h2 class="head1">Bugaati</h2><BR>
+        <h3 class="info1">THE  ferari i8 IS PRICE AT  RS 3.50 CARORE</h3>`
+          }
+          else if(imgofcar=='./bugaati/general.webp'){
+            box2.innerHTML=` <h2 class="head1">Bugaati</h2><BR>
         <p class="info">Automobiles Ettore Bugatti was a German then French manufacturer of high-performance automobiles. The company was founded in 1909 in the then-German city of Molsheim, Alsace, by the Italian-born industrial designer Ettore Bugatti..</p><br>
 
         <h2 class="head2"> Features of Bugaati</h2><br>
@@ -358,14 +379,11 @@
             </div>
         </div><br>
          
-        <h3 class="info1">THE  bugaati i8 IS PRICE AT  RS 11.35 CARORE</h3>
-        
-     
-    </div>
-    <br><br><br><br>
-    <!-- forpaganihuayra -->
-    <div class="box6"  id="box6" >
-        <h2 class="head1">Pagani huayra</h2><BR>
+        <h3 class="info1">THE  bugaati i8 IS PRICE AT  RS 11.35 CARORE</h3>`
+          }
+          else{
+            box2.innerHTML=`
+            <h2 class="head1">Pagani huayra</h2><BR>
         <p class="info">The Pagani Huayra is a mid-engine sports car produced by Italian sports car manufacturer Pagani, succeeding the company's previous offering, the Zonda .</p><br>
 
         <h2 class="head2"> Features of Pagani huayra</h2><br>
@@ -385,48 +403,99 @@
             </div>
         </div><br>
          
-        <h3 class="info1">THE  Pagani huayra IS PRICE AT  RS 15 CARORE</h3>
+        <h3 class="info1">THE  Pagani huayra IS PRICE AT  RS 15 CARORE</h3>`
+          }
+    }
+
+
+function sideview(){
+    if(carsrc=='./bmw/general.jpg' || carsrc=='./bmw/back.jpg' || carsrc=='./bmw/inner.jpg' || carimg.src=='./bmw/side.jpg' ){
+        carimg.src='./bmw/side.jpg'
+    }
+    else if(carsrc=='./lamborgini/general.webp' || carsrc=='./lamborgini/back.webp' || carsrc=='./lamborgini/inner.webp' || carsrc=='./lamborgini/side.webp'){
+        carimg.src='./lamborgini/side.webp'
+
+    }
+    else if(carsrc=='./ferari/general.webp' || carsrc=='./ferari/back.webp' || carsrc=='./ferari/inner.webp' || carsrc=='./ferari/side.webp'){
+        carimg.src='./ferari/side.webp'
+
+    }
+    else if(carsrc=='./bugaati/general.webp' || carsrc=='./bugaati/back.webp' || carsrc=='./bugaati/inner.webp' || carsrc=='./bugaati/side.webp'){
+        carimg.src='./bugaati/side.webp'
+
+    }
+
+  else{
+    carimg.src='./pagani/side.jpg'
+   
+  }
+}
+function innerview(){
+    if(carsrc=='./bmw/general.jpg' || carsrc=='./bmw/back.jpg' || carsrc=='./bmw/inner.jpg' || carimg.src=='./bmw/side.jpg' ){
+        carimg.src='./bmw/inner.jpg'
+    }
+    else if(carsrc=='./lamborgini/general.webp' || carsrc=='./lamborgini/back.webp' || carsrc=='./lamborgini/inner.webp' || carsrc=='./lamborgini/side.webp'){
+        carimg.src='./lamborgini/inner.webp'
+
+    }
+    else if(carsrc=='./ferari/general.webp' || carsrc=='./ferari/back.webp' || carsrc=='./ferari/inner.webp' || carsrc=='./ferari/side.webp'){
+        carimg.src='./ferari/inner.webp'
+
+    }
+    else if(carsrc=='./bugaati/general.webp' || carsrc=='./bugaati/back.webp' || carsrc=='./bugaati/inner.webp' || carsrc=='./bugaati/side.webp'){
+        carimg.src='./bugaati/inner.webp'
+
+    }
+
+  else{
+    carimg.src='./pagani/inner.jpg'
+   
+  }
+}
+function backview(){
+    if(carsrc=='./bmw/general.jpg' || carsrc=='./bmw/back.jpg' || carsrc=='./bmw/inner.jpg' || carimg.src=='./bmw/side.jpg' ){
+        carimg.src='./bmw/back.jpg'
+    }
+    else if(carsrc=='./lamborgini/general.webp' || carsrc=='./lamborgini/back.webp' || carsrc=='./lamborgini/inner.webp' || carsrc=='./lamborgini/side.webp'){
+        carimg.src='./lamborgini/back.webp'
+
+    }
+    else if(carsrc=='./ferari/general.webp' || carsrc=='./ferari/back.webp' || carsrc=='./ferari/inner.webp' || carsrc=='./ferari/side.webp'){
+        carimg.src='./ferari/back.webp'
+
+    }
+    else if(carsrc=='./bugaati/general.webp' || carsrc=='./bugaati/back.webp' || carsrc=='./bugaati/inner.webp' || carsrc=='./bugaati/side.webp'){
+        carimg.src='./bugaati/back.webp'
+
+    }
+
+  else{
+    carimg.src='./pagani/back.jpg'
+   
+  }
+}
+function frontview(){
+    if(carsrc=='./bmw/general.jpg' || carsrc=='./bmw/back.jpg' || carsrc=='./bmw/inner.jpg' || carimg.src=='./bmw/side.jpg' ){
+        carimg.src='./bmw/general.jpg'
+    }
+    else if(carsrc=='./lamborgini/general.webp' || carsrc=='./lamborgini/back.webp' || carsrc=='./lamborgini/inner.webp' || carsrc=='./lamborgini/side.webp'){
+        carimg.src='./lamborgini/general.webp'
+
+    }
+    else if(carsrc=='./ferari/general.webp' || carsrc=='./ferari/back.webp' || carsrc=='./ferari/inner.webp' || carsrc=='./ferari/side.webp'){
+        carimg.src='./ferari/general.webp'
+
+    }
+    else if(carsrc=='./bugaati/general.webp' || carsrc=='./bugaati/back.webp' || carsrc=='./bugaati/inner.webp' || carsrc=='./bugaati/inner.webp'){
+        carimg.src='./bugaati/general.webp'
+
+    }
+  else{
+    carimg.src='./pagani/general.jpg'
+  }
+}
+
         
-     
-    </div>
-    <br><br><br><br>
-
-       <script>
-
-        const carimg =document.getElementById("carimg");
-        const box2=document.getElementById("box2");
-        const box3=document.getElementById("box3");
-        const box4=document.getElementById("box4");
-        const box5=document.getElementById("box5");
-        const box6=document.getElementById("box6");
-        
-
-       
-            // function innerview(img1,img2,img3,img4,img5){
-
-
-                function bmw(){
-                carimg.src ="./bmw/general.jpg"
-            }
-       
-            function lamborgini(){
-                carimg.src ="./lamborgini/general.webp"
-                box2.innerHTML= box3
-                
-            }
-          
-            function ferari(){
-                carimg.src ="./ferari/front.webp"
-                box2.innerText= box4
-            }
-            function bugaati(){
-                carimg.src ="./bugaati/front1.webp"
-                box2.innerText= box5
-            }
-            function pagani(){
-                carimg.src ="./pagani/front.jpg"
-                box2.innerText= box6
-            }
 
 
 
