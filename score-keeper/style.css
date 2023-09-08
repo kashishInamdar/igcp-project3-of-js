@@ -1,3 +1,8 @@
+*{
+    margin: 0; 
+    padding: 0;
+}
+
 .incre-dicre-btn{
     border: 2px solid black;
     padding-left: 15px;
@@ -8,6 +13,20 @@
 }
 body{
     background-color: #0a0a0a;
+}
+.container{
+    margin-bottom: 120px;
+    margin-top: -20px;
+    
+}
+
+
+.mainheading{
+    color: #ff0066;
+    text-align: center;
+    font-size: 60px;
+    margin-top: 30px;
+    text-shadow: 1px 1px 2px white, 0 0 1em #ff0066, 0 0 0.2em #ff0066;
 }
 .bg-green{
     background-color: #33ff33;
@@ -20,10 +39,10 @@ body{
     height: 70vh;
     margin-top: 100px;
 }
-.main-heading
+/* .main-heading
 {
     color: ;
-}
+} */
 .score{
     display: block;
     text-align: center;
