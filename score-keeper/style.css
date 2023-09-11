@@ -1,6 +1,7 @@
 *{
     margin: 0; 
     padding: 0;
+    
 }
 
 .incre-dicre-btn{
@@ -59,15 +60,17 @@ body{
     position: relative;
 }
 .reset-btn{
+  
     position: absolute;
     bottom: 5px;
-    left: 42%;
-    width: 100px;
+    left: 240px; 
+    /* left: 42%;
+    /* width: 100px;
     border: 2px solid black;
     padding-left: 15px;
     padding-right: 15px;
     font-size: 20px;
-    border-radius: 20px;
+    border-radius: 20px; */
 }
 .incre-dicre-box{
     margin-top: 100px;
