@@ -23,6 +23,7 @@
   />
 </head>
 
+
 <body>
     <div class="mainheading">Score Keeper</div>
     <div class="container">
@@ -33,11 +34,11 @@
                     <p class="player">Player 1</p>
                     <span id="quantity1" class="score">0</span>
                     <div class="d-flex justify-content-between incre-dicre-box">
-                        <button type="button" class="incre-dicre-btn bg-red" onclick="decrement(1)">
+                        <button type="button" class="incre-dicre-btn bg-red" onclick="addtocartdec(1)">
                             -
                         </button>
 
-                        <button type="button" class="incre-dicre-btn bg-green" onclick="increment(1)">
+                        <button type="button" class="incre-dicre-btn bg-green" onclick="addtocartinc(1)">
                             +
                         </button>
                     </div>
@@ -52,11 +53,11 @@
                     <p class="player">Player 2</p>
                     <span id="quantity2" class="score">0</span>
                     <div class="d-flex justify-content-between incre-dicre-box">
-                        <button type="button" class="incre-dicre-btn bg-red" onclick="decrement(2)">
+                        <button type="button" class="incre-dicre-btn bg-red" onclick="addtocartdec(2)">
                             -
                         </button>
 
-                        <button type="button" class="incre-dicre-btn bg-green" onclick="increment(2)">
+                        <button type="button" class="incre-dicre-btn bg-green" onclick="addtocartinc(2)">
                             +
                         </button>
                     </div>
@@ -68,7 +69,7 @@
     </div>
 
     <!-- -------------------footer------------- -->
-    <div class="footer" style="height: 450px;" >
+    <div class="footer"  style="height: 450px;">
         <div class="col-5 padding-left">
           
             <div class="footer-main-heading">Works On Javascript</div>
@@ -117,38 +118,78 @@
       </div> 
 
     <script>
-        const quantity1Element = document.getElementById("quantity1");
-        const quantity2Element = document.getElementById("quantity2");
-        // const reset = document.getElementById("reset");
 
-        let quantity1 = parseInt(quantity1Element.innerText);
-        let quantity2 = parseInt(quantity2Element.innerText);
+const listofcard=[1,1,1]
+       function addtocartinc(index){
+        
+        const quantity=document.getElementById(`quantity${index}`)
+        if( quantity.innerText==10){
+           if(index==1){
+            alert("😍 Team A ✨ Is Win🎉 🥳")
+           }
+           else{
+            alert("😍 Team B ✨ Is Win🎉 🥳")
+           }
+         }else{
+            quantity.innerText=++listofcard[index];
+         }
+       }
+       function addtocartdec(index){
+        const quantity=document.getElementById(`quantity${index}`)
+        if( quantity.innerText==0){
+           
+            alert("You Can't Decrease The Score")
+          
+          
+         }else{
+            quantity.innerText=--listofcard[index];
+         }
+       }
+       function resetBtn(){
+        const quantity1=document.getElementById("quantity1")
+        const quantity2=document.getElementById("quantity2")
+      quantity1.innerText=0
+      quantity2.innerText=0
+       }
 
-        function resetBtn() {
-            quantity1Element.innerText = "0";
-            quantity2Element.innerText = "0";
-        }
-        function increment(num) {
-            if (quantity1 < 10 && quantity2 < 10) {
-                if (num == 1) {
-                    quantity1Element.innerText = ++quantity1;
-                }
-                else {
-                    quantity2Element.innerText = ++quantity2;
-                }  
-            }
-            if( quantity1 == 10 && quantity2 == 10){
-                    alert("😍Team A✨ is win🎉 🥳")
-                }
-        }
-        function decrement(num) {
-            if (num == 1) {
-                quantity1Element.innerText = --quantity1;
-            }
-            else {
-                quantity2Element.innerText = --quantity2;
-            }
-        }
+
+        // const quantity1Element = document.getElementById("quantity1");
+        // const quantity2Element = document.getElementById("quantity2");
+        // // const reset = document.getElementById("reset");
+
+        // let quantity1 = parseInt(quantity1Element.innerText);
+        // let quantity2 = parseInt(quantity2Element.innerText);
+
+        // function resetBtn() {
+        //     quantity1Element.innerText = "0";
+        //     quantity2Element.innerText = "0";
+        // }
+        // function increment(num) {
+        //     if (quantity1 < 10 && quantity2 < 10) {
+        //         if (num == 1) {
+        //             quantity1Element.innerText = ++quantity1;
+        //         }
+        //         else {
+        //             quantity2Element.innerText = ++quantity2;
+        //         }  
+        //     }
+        //     if( quantity1 == 10 && quantity2 == 10){
+        //             alert("😍Team A✨ is win🎉 🥳")
+        //         }
+        // }
+        // function decrement(num) {
+        //     if (num == 1) {
+        //         quantity1Element.innerText = --quantity1;
+        //     }
+        //     else {
+        //         quantity2Element.innerText = --quantity2;
+        //     }
+
+
+        //     if(quantity1==0 && quantity2==0){
+        //         return
+        //     }
+        // }
 
     </script>
 
