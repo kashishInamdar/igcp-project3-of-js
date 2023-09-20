@@ -126,12 +126,14 @@ const listofcard=[1,1,1]
         if( quantity.innerText==10){
            if(index==1){
             alert("😍 Team A ✨ Is Win🎉 🥳")
+            return
            }
            else{
             alert("😍 Team B ✨ Is Win🎉 🥳")
+            return
            }
          }else{
-            quantity.innerText=++listofcard[index];
+            quantity.innerText=listofcard[index]++;
          }
        }
        function addtocartdec(index){
